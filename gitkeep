@@ -1,0 +1,3 @@
+# This file keeps the data/ folder tracked by Git.
+# Place your dataset here (e.g. llm_dataset_v10_1.gz) before running the app.
+# All data files are ignored by .gitignore — never commit real datasets.

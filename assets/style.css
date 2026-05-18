@@ -1,0 +1,255 @@
+/* ═══════════════════════════════════════════════════════════════
+   Sales Intelligence Chat — Global Stylesheet
+   Theme: Dark / Industrial Data-Dashboard
+   Font: DM Mono (monospace headings) + DM Sans (body)
+═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── CSS variables ──────────────────────────────────────────── */
+:root {
+    --bg-primary:    #0d0f14;
+    --bg-secondary:  #13161e;
+    --bg-card:       #1a1e2a;
+    --bg-hover:      #22273a;
+    --accent:        #4f8ef7;
+    --accent-dim:    #2a4a8a;
+    --accent-glow:   rgba(79,142,247,.15);
+    --success:       #34d399;
+    --warning:       #fbbf24;
+    --danger:        #f87171;
+    --text-primary:  #e8eaf0;
+    --text-secondary:#8b92a8;
+    --text-muted:    #555d72;
+    --border:        #252b3b;
+    --border-accent: #2a4a8a;
+    --radius:        10px;
+    --radius-lg:     16px;
+    --mono:          'DM Mono', monospace;
+    --sans:          'DM Sans', sans-serif;
+}
+
+/* ── Global resets ──────────────────────────────────────────── */
+html, body, [class*="css"] {
+    font-family: var(--sans) !important;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Hide default Streamlit chrome */
+#MainMenu, footer, header { visibility: hidden; }
+.stDeployButton { display: none; }
+
+/* ── App container ──────────────────────────────────────────── */
+.block-container {
+    padding: 2rem 3rem !important;
+    max-width: 1100px !important;
+}
+
+/* ── Hero section ───────────────────────────────────────────── */
+.hero {
+    text-align: center;
+    padding: 2.5rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-family: var(--mono) !important;
+    font-size: 2.4rem !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: .4rem !important;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+    background-color: var(--bg-secondary) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0 8px;
+}
+
+.sidebar-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.sidebar-title {
+    font-family: var(--mono);
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: .02em;
+}
+
+.sidebar-version {
+    font-size: .7rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ── Data summary cards ──────────────────────────────────────── */
+.data-summary {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.summary-item {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 8px;
+    text-align: center;
+}
+
+.s-label {
+    display: block;
+    font-size: .65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 4px;
+}
+
+.s-value {
+    display: block;
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+/* ── Sample question buttons ─────────────────────────────────── */
+.stButton > button {
+    background: var(--bg-card) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    font-size: .8rem !important;
+    text-align: left !important;
+    padding: .5rem .75rem !important;
+    transition: all .2s ease !important;
+}
+
+.stButton > button:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--accent-dim) !important;
+    color: var(--accent) !important;
+    transform: translateX(2px);
+}
+
+/* ── Chat messages ───────────────────────────────────────────── */
+[data-testid="stChatMessage"] {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 1rem 1.25rem !important;
+    margin-bottom: .75rem !important;
+}
+
+[data-testid="stChatMessage"][data-testid*="user"] {
+    border-left: 3px solid var(--accent) !important;
+}
+
+[data-testid="stChatMessage"][data-testid*="assistant"] {
+    border-left: 3px solid var(--success) !important;
+}
+
+/* ── Chat input ──────────────────────────────────────────────── */
+[data-testid="stChatInputContainer"] {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-accent) !important;
+    border-radius: var(--radius-lg) !important;
+    padding: .25rem .5rem !important;
+}
+
+[data-testid="stChatInputContainer"]:focus-within {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* ── Dataframe table ─────────────────────────────────────────── */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    overflow: hidden;
+}
+
+/* ── Inputs & selects ────────────────────────────────────────── */
+input, textarea, select {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--sans) !important;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    margin-top: 2rem;
+}
+
+.empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    font-family: var(--mono);
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+hr {
+    border-color: var(--border) !important;
+    margin: 1rem 0 !important;
+}
+
+/* ── Alerts ──────────────────────────────────────────────────── */
+[data-testid="stAlert"] {
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+.stSpinner > div {
+    border-top-color: var(--accent) !important;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
