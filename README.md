@@ -13,7 +13,7 @@ Ask follow-up questions, get instant breakdowns, and export results — all in a
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4.1-412991?logo=openai&logoColor=white)](https://openai.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Sales Intelligence Chat Demo](assets/demo-preview.png)
+![Sales Intelligence Chat Demo](assets/Sales Intelligence Chat.png)
 
 </div>
 
